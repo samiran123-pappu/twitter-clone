@@ -165,7 +165,8 @@ export const getLikedPosts = async (req, res) => {
 		const user = await User.findById(userId);
 		if (!user) return res.status(404).json({ error: "User not found" });
 
-		const likedPosts = await Post.find({ _id: { $in: user.likedPosts } })
+		const likedPosts = await Post.find({ likes: userId })
+		    .sort({ createdAt: -1 })
 			.populate({
 				path: "user",
 				select: "-password",
@@ -181,6 +182,9 @@ export const getLikedPosts = async (req, res) => {
 		res.status(500).json({ error: "Internal server error" });
 	}
 };
+
+
+
 
 export const getFollowingPosts = async (req, res) => {
 	try {
