@@ -11,11 +11,11 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import toast from "react-hot-toast";
 
 const SignUpPage = () => {
-    // Changed fullName → fullname to match backend
+    // Changed fullname → fullname to match backend
     const [formData, setFormData] = useState({
         email: "",
         username: "",
-        fullname: "",    // ← Fixed: was fullName
+        fullname: "",    // ← Fixed: was fullname
         password: "",
     });
 
@@ -29,7 +29,7 @@ const SignUpPage = () => {
                     headers: {
                         "Content-Type": "application/json",
                     },
-                    // Sending "fullname" not "fullName"
+                    // Sending "fullname" not "fullname"
                     body: JSON.stringify({ email, username, fullname, password }),
                 });
 
@@ -100,9 +100,9 @@ const SignUpPage = () => {
                                 type='text'
                                 className='grow'
                                 placeholder='Full Name'
-                                name='fullname'           // ← Fixed: was fullName
+                                name='fullname'           // ← Fixed: was fullname
                                 onChange={handleInputChange}
-                                value={formData.fullname} // ← Fixed: was formData.fullName
+                                value={formData.fullname} // ← Fixed: was formData.fullname
                             />
                         </label>
                     </div>

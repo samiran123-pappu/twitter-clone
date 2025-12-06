@@ -89,7 +89,7 @@ const SignUpPage = () => {
 	const [formData, setFormData] = useState({
 		email: "",
 		username: "",
-		fullName: "",
+		fullname: "",
 		password: "",
 	});
 
@@ -142,9 +142,9 @@ const SignUpPage = () => {
 								type='text'
 								className='grow'
 								placeholder='Full Name'
-								name='fullName'
+								name='fullname'
 								onChange={handleInputChange}
-								value={formData.fullName}
+								value={formData.fullname}
 							/>
 						</label>
 					</div>
@@ -330,7 +330,7 @@ import { BiLogOut } from "react-icons/bi";
 
 const Sidebar = () => {
 	const data = {
-		fullName: "John Doe",
+		fullname: "John Doe",
 		username: "johndoe",
 		profileImg: "/avatars/boy1.png",
 	};
@@ -383,7 +383,7 @@ const Sidebar = () => {
 						</div>
 						<div className='flex justify-between flex-1'>
 							<div className='hidden md:block'>
-								<p className='text-white font-bold text-sm w-20 truncate'>{data?.fullName}</p>
+								<p className='text-white font-bold text-sm w-20 truncate'>{data?.fullname}</p>
 								<p className='text-slate-500 text-sm'>@{data?.username}</p>
 							</div>
 							<BiLogOut className='w-5 h-5 cursor-pointer' />
@@ -408,7 +408,7 @@ export const POSTS = [
 		user: {
 			username: "johndoe",
 			profileImg: "/avatars/boy1.png",
-			fullName: "John Doe",
+			fullname: "John Doe",
 		},
 		comments: [
 			{
@@ -417,7 +417,7 @@ export const POSTS = [
 				user: {
 					username: "janedoe",
 					profileImg: "/avatars/girl1.png",
-					fullName: "Jane Doe",
+					fullname: "Jane Doe",
 				},
 			},
 		],
@@ -429,7 +429,7 @@ export const POSTS = [
 		user: {
 			username: "johndoe",
 			profileImg: "/avatars/boy2.png",
-			fullName: "John Doe",
+			fullname: "John Doe",
 		},
 		comments: [
 			{
@@ -438,7 +438,7 @@ export const POSTS = [
 				user: {
 					username: "janedoe",
 					profileImg: "/avatars/girl2.png",
-					fullName: "Jane Doe",
+					fullname: "Jane Doe",
 				},
 			},
 		],
@@ -451,7 +451,7 @@ export const POSTS = [
 		user: {
 			username: "johndoe",
 			profileImg: "/avatars/boy3.png",
-			fullName: "John Doe",
+			fullname: "John Doe",
 		},
 		comments: [],
 		likes: ["6658s891", "6658s892", "6658s893", "6658s894", "6658s895", "6658s896"],
@@ -463,7 +463,7 @@ export const POSTS = [
 		user: {
 			username: "johndoe",
 			profileImg: "/avatars/boy3.png",
-			fullName: "John Doe",
+			fullname: "John Doe",
 		},
 		comments: [
 			{
@@ -472,7 +472,7 @@ export const POSTS = [
 				user: {
 					username: "janedoe",
 					profileImg: "/avatars/girl3.png",
-					fullName: "Jane Doe",
+					fullname: "Jane Doe",
 				},
 			},
 		],
@@ -493,25 +493,25 @@ export const POSTS = [
 export const USERS_FOR_RIGHT_PANEL = [
 	{
 		_id: "1",
-		fullName: "John Doe",
+		fullname: "John Doe",
 		username: "johndoe",
 		profileImg: "/avatars/boy2.png",
 	},
 	{
 		_id: "2",
-		fullName: "Jane Doe",
+		fullname: "Jane Doe",
 		username: "janedoe",
 		profileImg: "/avatars/girl1.png",
 	},
 	{
 		_id: "3",
-		fullName: "Bob Doe",
+		fullname: "Bob Doe",
 		username: "bobdoe",
 		profileImg: "/avatars/boy3.png",
 	},
 	{
 		_id: "4",
-		fullName: "Daisy Doe",
+		fullname: "Daisy Doe",
 		username: "daisydoe",
 		profileImg: "/avatars/girl2.png",
 	},
@@ -557,7 +557,7 @@ const RightPanel = () => {
 									</div>
 									<div className='flex flex-col'>
 										<span className='font-semibold tracking-tight truncate w-28'>
-											{user.fullName}
+											{user.fullname}
 										</span>
 										<span className='text-sm text-slate-500'>@{user.username}</span>
 									</div>
@@ -781,7 +781,7 @@ const Post = ({ post }) => {
 				<div className='flex flex-col flex-1'>
 					<div className='flex gap-2 items-center'>
 						<Link to={`/profile/${postOwner.username}`} className='font-bold'>
-							{postOwner.fullName}
+							{postOwner.fullname}
 						</Link>
 						<span className='text-gray-700 flex gap-1 text-sm'>
 							<Link to={`/profile/${postOwner.username}`}>@{postOwner.username}</Link>
@@ -836,7 +836,7 @@ const Post = ({ post }) => {
 												</div>
 												<div className='flex flex-col'>
 													<div className='flex items-center gap-1'>
-														<span className='font-bold'>{comment.user.fullName}</span>
+														<span className='font-bold'>{comment.user.fullname}</span>
 														<span className='text-gray-700 text-sm'>
 															@{comment.user.username}
 														</span>
@@ -1029,7 +1029,7 @@ const ProfilePage = () => {
 
 	const user = {
 		_id: "1",
-		fullName: "John Doe",
+		fullname: "John Doe",
 		username: "johndoe",
 		profileImg: "/avatars/boy2.png",
 		coverImg: "/cover.png",
@@ -1065,7 +1065,7 @@ const ProfilePage = () => {
 									<FaArrowLeft className='w-4 h-4' />
 								</Link>
 								<div className='flex flex-col'>
-									<p className='font-bold text-lg'>{user?.fullName}</p>
+									<p className='font-bold text-lg'>{user?.fullname}</p>
 									<span className='text-sm text-slate-500'>{POSTS?.length} posts</span>
 								</div>
 							</div>
@@ -1134,7 +1134,7 @@ const ProfilePage = () => {
 
 							<div className='flex flex-col gap-4 mt-14 px-4'>
 								<div className='flex flex-col'>
-									<span className='font-bold text-lg'>{user?.fullName}</span>
+									<span className='font-bold text-lg'>{user?.fullname}</span>
 									<span className='text-sm text-slate-500'>@{user?.username}</span>
 									<span className='text-sm my-1'>{user?.bio}</span>
 								</div>
@@ -1210,7 +1210,7 @@ import { useState } from "react";
 
 const EditProfileModal = () => {
 	const [formData, setFormData] = useState({
-		fullName: "",
+		fullname: "",
 		username: "",
 		email: "",
 		bio: "",
@@ -1246,8 +1246,8 @@ const EditProfileModal = () => {
 								type='text'
 								placeholder='Full Name'
 								className='flex-1 input border border-gray-700 rounded p-2 input-md'
-								value={formData.fullName}
-								name='fullName'
+								value={formData.fullname}
+								name='fullname'
 								onChange={handleInputChange}
 							/>
 							<input

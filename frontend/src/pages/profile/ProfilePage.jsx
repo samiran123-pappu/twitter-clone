@@ -87,7 +87,7 @@ const ProfilePage = () => {
                                     <FaArrowLeft className='w-4 h-4' />
                                 </Link>
                                 <div className='flex flex-col'>
-                                    <p className='font-bold text-lg'>{user?.fullName}</p>
+                                    <p className='font-bold text-lg'>{user?.fullname}</p>
                                     <span className='text-sm text-slate-500'>{POSTS?.length} posts</span>
                                 </div>
                             </div>
@@ -164,7 +164,7 @@ const ProfilePage = () => {
 
                             <div className='flex flex-col gap-4 mt-14 px-4'>
                                 <div className='flex flex-col'>
-                                    <span className='font-bold text-lg'>{user?.fullName}</span>
+                                    <span className='font-bold text-lg'>{user?.fullname}</span>
                                     <span className='text-sm text-slate-500'>@{user?.username}</span>
                                     <span className='text-sm my-1'>{user?.bio}</span>
                                 </div>
